@@ -142,26 +142,14 @@
     }
 
     .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
-    .people-block { margin-top: 64px; }
-    .people-block .section-head { max-width: 880px; }
-    .people-block + .trust-strip { margin-top: 64px; }
+    .role-head p + p { margin-top: 16px; }
 
-    .trust-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 54px;
-    }
-
-    .trust-card, .card, .section-card {
+    .card, .section-card {
       border: 1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
       box-shadow: var(--shadow);
       border-radius: var(--radius);
     }
-
-    .trust-card { padding: 18px; color: var(--muted); min-height: 118px; }
-    .trust-card strong { display: block; color: var(--text); font-size: 17px; margin-bottom: 6px; }
 
     section { padding: 72px 0; }
     .section-head { max-width: 780px; margin-bottom: 28px; }
@@ -173,16 +161,6 @@
     .card { padding: 28px; }
     .card h3 { margin: 0 0 10px; font-size: 24px; letter-spacing: -.03em; }
     .card p { margin: 0; color: var(--muted); }
-
-    .list-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 24px; }
-    .pill {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      border-radius: 16px;
-      padding: 15px 16px;
-      color: #d7e7fa;
-      font-weight: 700;
-    }
 
     .callout {
       margin-top: 28px;
@@ -202,7 +180,7 @@
     @media (max-width: 820px) {
       .links { display: none; }
       .hero { padding-top: 72px; }
-      .trust-strip, .grid-2, .grid-3, .list-grid { grid-template-columns: 1fr; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
       .container { width: min(100% - 28px, 1120px); }
     }
   </style>
@@ -216,7 +194,7 @@
       </a>
       <nav class="links" aria-label="Main navigation">
         <a href="#why">Why it matters</a>
-        <a href="#map">What we map</a>
+        <a href="#map">The map</a>
         <a href="platform.html">Platform</a>
         <a class="button" href="mailto:hello@getyousomeai.com?subject=Pilot%20conversation%20for%20GetYouSomeAI">Pilot conversations</a>
       </nav>
@@ -231,57 +209,27 @@
         <p class="hero-copy">Practical enterprise AI foundations for mid-market companies — mapped to your real systems, workflows, data, files, code, and people. Fast, affordable, and owned by your team.</p>
         <div class="hero-actions">
           <a class="button primary" href="mailto:hello@getyousomeai.com?subject=Pilot%20conversation%20for%20GetYouSomeAI">Start a pilot conversation</a>
-          <a class="button" href="platform.html">See what powers it</a>
-        </div>
-
-        <div class="people-block">
-          <div class="section-head">
-            <h2>Built for the people who keep the business running</h2>
-            <p>Every company has people who know how the business really works — the report builder, the operations lead, the finance analyst, the purchasing coordinator, the quality manager, the customer service rep, and the person everyone asks when something breaks. GetYouSomeAI helps turn that scattered knowledge into a living map the whole team can use.</p>
-          </div>
-          <div class="grid-3">
-            <div class="card">
-              <p>Customer service teams can find process answers, account context, escalation paths, and policy guidance without chasing tribal knowledge.</p>
-            </div>
-            <div class="card">
-              <p>Finance teams can catch reconciliation issues, cost-driver confusion, approval gaps, and report mismatches before small errors become larger problems.</p>
-            </div>
-            <div class="card">
-              <p>Purchasing and procurement teams can catch supplier, contract, approval, and item-data issues before they delay orders or create rework.</p>
-            </div>
-            <div class="card">
-              <p>Quality teams can connect procedures, exceptions, audits, corrective actions, and compliance evidence so recurring problems are easier to spot and prevent.</p>
-            </div>
-            <div class="card">
-              <p>Operations teams can track jobs, handoffs, schedules, exceptions, and process gaps before they turn into daily fire drills.</p>
-            </div>
-            <div class="card">
-              <p>Reporting and analytics teams can align metric definitions, flag conflicting numbers, and explain where dashboard numbers actually come from.</p>
-            </div>
-          </div>
-          <div class="hero-actions">
-            <a class="button" href="platform.html">See the full platform view</a>
-          </div>
-        </div>
-
-        <div class="trust-strip" aria-label="Key promises">
-          <div class="trust-card"><strong>Real context</strong> Built around the systems and knowledge your business already runs on.</div>
-          <div class="trust-card"><strong>No hype deck</strong> Focused on usable AI infrastructure, not generic chatbot theater.</div>
-          <div class="trust-card"><strong>Team-owned</strong> Designed so your people can maintain and expand the foundation.</div>
-          <div class="trust-card"><strong>Practical pilots</strong> Start focused, prove value, and grow from there.</div>
         </div>
       </div>
     </section>
 
     <section id="why">
-      <div class="container grid-2">
-        <div class="section-head">
-          <h2>Most companies are stuck between AI hype and AI reality.</h2>
-          <p>You have valuable knowledge everywhere: systems, files, reports, code, workflows, databases, and people who know how everything really works.</p>
+      <div class="container">
+        <div class="section-head role-head">
+          <h2>Built for the people who keep the business running</h2>
+          <p>Every company has people who know how the business really works — the report builder, the operations lead, the finance analyst, the purchasing coordinator, the quality manager, the customer service rep, and the person everyone asks when something breaks.</p>
+          <p>GetYouSomeAI helps turn that scattered knowledge into a living map the whole team can use.</p>
         </div>
-        <div class="card">
-          <h3>AI cannot help much if it does not understand your business.</h3>
-          <p>Generic AI tools do not automatically know your applications, rules, terminology, workflows, data relationships, or tribal knowledge. GetYouSomeAI helps create the missing foundation.</p>
+        <div class="grid-3">
+          <div class="card">
+            <p>Customer service, finance, purchasing, quality, operations, and reporting teams can get answers without relying on tribal knowledge.</p>
+          </div>
+          <div class="card">
+            <p>Leaders can see risks, ownership gaps, and modernization opportunities before they become urgent initiatives.</p>
+          </div>
+          <div class="card">
+            <p>Technical teams can trace systems, data, code, integrations, and dependencies when deeper work is needed.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -290,32 +238,7 @@
       <div class="container">
         <div class="section-head">
           <h2>AI works better when it has a map.</h2>
-          <p>GetYouSomeAI helps your team build a living map of your real business — systems, workflows, data, files, code, and people — so AI can produce answers grounded in how your company actually works.</p>
-        </div>
-        <div class="list-grid">
-          <div class="pill">Applications</div>
-          <div class="pill">Workflows</div>
-          <div class="pill">Data</div>
-          <div class="pill">Files and documents</div>
-          <div class="pill">Code</div>
-          <div class="pill">Reports</div>
-          <div class="pill">Business rules</div>
-          <div class="pill">People, roles, and ownership</div>
-          <div class="pill">Tribal knowledge</div>
-          <div class="pill">Suppliers and customers</div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container grid-2">
-        <div class="card">
-          <h3>Not another AI demo. A foundation your team can use.</h3>
-          <p>Generic AI tools can answer generic questions. GetYouSomeAI is about grounding AI in your actual business — the systems you run, the work your people do, the data you rely on, and the knowledge that usually lives in someone’s head.</p>
-        </div>
-        <div class="card">
-          <h3>Built for practical business problems.</h3>
-          <p>Once your business is mapped, the same foundation can help with reporting alignment, data warehouse cleanup, EDI translation, integration planning, modernization, AI-powered search, and grounded question-answering.</p>
+          <p>Generic AI tools can answer generic questions. GetYouSomeAI grounds AI in how your company actually works — your systems, workflows, data, files, code, roles, and tribal knowledge.</p>
         </div>
       </div>
     </section>
@@ -336,7 +259,7 @@
         </div>
         <div class="card">
           <h3>Start with a focused slice.</h3>
-          <p>Pick one application, workflow, department, file set, or operational pain point. We map it, make it searchable, and show how AI can answer with context and traceability.</p>
+          <p>Pick one department, workflow, application, file set, or operational pain point. We map it, make it searchable, and show how AI can answer with context and traceability.</p>
           <div class="hero-actions">
             <a class="button primary" href="mailto:hello@getyousomeai.com?subject=Pilot%20conversation%20for%20GetYouSomeAI">Start a pilot conversation</a>
           </div>
