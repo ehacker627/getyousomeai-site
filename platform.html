@@ -68,6 +68,7 @@
     .role-head p + p { margin-top: 16px; }
 
     .module-grid, .use-case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .use-case-grid { list-style: none; margin: 0; padding: 0; }
     .module {
       border: 1px solid var(--line);
@@ -80,8 +81,7 @@
     .module-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
     .module h3 { margin: 0; font-size: 24px; letter-spacing: -.035em; }
     .num { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 13px; display: grid; place-items: center; color: #03101c; font-weight: 900; background: linear-gradient(135deg, var(--cyan), var(--blue)); }
-    .expansion .num { background: linear-gradient(135deg, var(--orange), var(--magenta)); }
-    .expansion .module:last-child { grid-column: 1 / -1; }
+    .services .num { background: linear-gradient(135deg, var(--orange), var(--magenta)); }
     .module p { margin: 0 0 16px; color: var(--muted); }
     .owns { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag { border: 1px solid rgba(255,255,255,.12); color: #d7e7fa; background: rgba(255,255,255,.05); border-radius: 999px; padding: 6px 10px; font-size: 13px; }
@@ -111,7 +111,7 @@
     @media (max-width: 820px) {
       .links { display: none; }
       .hero { padding-top: 72px; }
-      .module-grid, .use-case-grid { grid-template-columns: 1fr; }
+      .module-grid, .use-case-grid, .product-grid { grid-template-columns: 1fr; }
       .container { width: min(100% - 28px, 1160px); }
     }
   </style>
@@ -125,8 +125,9 @@
       </a>
       <nav class="links" aria-label="Main navigation">
         <a href="index.html">Home</a>
+        <a href="#core">Core</a>
         <a href="#foundation">Foundation</a>
-        <a href="#expansion">Expansion</a>
+        <a href="#improvement">Services</a>
         <a class="button" href="mailto:hello@getyousomeai.com?subject=Pilot%20conversation%20for%20GetYouSomeAI">Pilot conversations</a>
       </nav>
     </div>
@@ -137,10 +138,10 @@
       <div class="container">
         <div class="eyebrow"><span class="pulse"></span> The platform behind GetYouSomeAI.</div>
         <h1>KnowledgeMap AI Platform</h1>
-        <p class="hero-copy">KnowledgeMap AI is an AI-ready knowledge foundation for how your business works. It organizes enterprise context into maps, catalogs, blueprints, context packets, search, and grounded answers your team can maintain over time.</p>
+        <p class="hero-copy">KnowledgeMap AI combines a governed agentic core with a living map of the business. Teams can ask, plan, act, review, automate, and improve using approved context, tools, workflows, and traceable results.</p>
         <div class="hero-actions">
           <a class="button primary" href="index.html">Back to homepage</a>
-          <a class="button" href="#foundation">View modules</a>
+          <a class="button" href="#core">View Core</a>
         </div>
       </div>
     </section>
@@ -149,7 +150,65 @@
       <div class="container">
         <div class="section-head">
           <h2>A living map of the business</h2>
-          <p>KnowledgeMap AI is not just a chatbot, not just a data warehouse, and not just documentation. It is a living map of systems, workflows, data, files, code, rules, and people — maintained as the business changes and used to ground practical AI experiences.</p>
+          <p>KnowledgeMap AI is not just a chatbot, not just a data warehouse, and not just documentation. It combines a living map of systems, workflows, data, files, code, rules, and people with a governed agentic workspace that can turn business context into controlled action.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <h2>Two product layers, plus implementation services</h2>
+          <p>KnowledgeMap AI is intentionally simple to buy: start with Core, expand into Foundation, and use implementation services when specialized work is needed.</p>
+        </div>
+
+        <div class="product-grid services">
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Core</h3><span class="num">1</span></div>
+            <p>The starting product: a governed agentic workspace with essential connectivity. Core helps users ask, plan, act, review, and automate through approved tools, human approval gates, task history, execution logs, and result summaries.</p>
+            <div class="owns"><span class="tag">Agentic workspace</span><span class="tag">Ask / Plan / Act / Review</span><span class="tag">Essential connectors</span><span class="tag">Human approval</span><span class="tag">Execution logs</span><span class="tag">Task history</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Foundation</h3><span class="num">2</span></div>
+            <p>The full platform around Core: the living business map, productized context infrastructure, retrieval, observability, governance, review, insights, administration, APIs, and reusable capabilities that make the agent smarter and easier to maintain.</p>
+            <div class="owns"><span class="tag">Living business map</span><span class="tag">Catalogs</span><span class="tag">Blueprints</span><span class="tag">Context packets</span><span class="tag">Search</span><span class="tag">Sync</span><span class="tag">Observe</span><span class="tag">Governance</span><span class="tag">Review</span><span class="tag">Insights</span><span class="tag">API</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>Implementation Services</h3><span class="num">3</span></div>
+            <p>Custom implementation, integration, migration, workflow, automation, and specialized agent work for customers who need help applying KnowledgeMap AI to their environment. Reusable improvements can be folded back into Foundation.</p>
+            <div class="owns"><span class="tag">Custom integrations</span><span class="tag">Workflow automation</span><span class="tag">Specialized agents</span><span class="tag">Migration support</span><span class="tag">Roadmap feedback</span><span class="tag">Productized improvements</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="core">
+      <div class="container">
+        <div class="section-head">
+          <h2>KnowledgeMap Core capabilities</h2>
+          <p>Core is the first product layer. It gives teams a governed way to move from conversation to controlled action.</p>
+        </div>
+
+        <div class="module-grid">
+          <article class="module">
+            <div class="module-top"><h3>Conversational task workspace</h3><span class="num">1</span></div>
+            <p>A controlled workspace for asking questions, shaping tasks, reviewing plans, and tracking work from conversation through action.</p>
+            <div class="owns"><span class="tag">Ask / Plan / Act / Review workflows</span><span class="tag">Task and action history</span><span class="tag">Result summaries</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>Controlled action layer</h3><span class="num">2</span></div>
+            <p>Tool and connector access with human approval gates, action policies, review-before-action workflows, and error recovery.</p>
+            <div class="owns"><span class="tag">Tool and connector access</span><span class="tag">Human approval gates</span><span class="tag">Action policies</span><span class="tag">Error recovery</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>Execution visibility</h3><span class="num">3</span></div>
+            <p>Execution logs, task history, result summaries, and essential connectors so teams can understand what happened and why.</p>
+            <div class="owns"><span class="tag">Execution logs</span><span class="tag">Task history</span><span class="tag">Result summaries</span><span class="tag">Essential connectors</span></div>
+          </article>
         </div>
       </div>
     </section>
@@ -157,57 +216,69 @@
     <section id="foundation">
       <div class="container">
         <div class="section-head">
-          <h2>KnowledgeMap Foundation</h2>
-          <p>The Foundation product includes everything needed to start building and using your KnowledgeMap: enterprise context harvesting, catalogs, mappings, context packets, retrieval indexes, and grounded answers with provenance.</p>
+          <h2>KnowledgeMap Foundation capabilities</h2>
+          <p>Foundation adds the productized business map and platform capabilities around Core.</p>
         </div>
 
         <div class="module-grid">
           <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Atlas</h3><span class="num">1</span></div>
-            <p>The canonical knowledge model layer. Atlas is the structured map of the customer’s enterprise context.</p>
-            <div class="owns"><span class="tag">Catalogs</span><span class="tag">Relationships</span><span class="tag">Lineage</span><span class="tag">Versioning</span></div>
+            <div class="module-top"><h3>Connect</h3><span class="num">1</span></div>
+            <p>Safe access to files, repositories, databases, APIs, identity providers, business systems, and other enterprise sources.</p>
           </article>
 
           <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Connect</h3><span class="num">2</span></div>
-            <p>The adapter and ingestion framework. Connect gathers raw material from the systems the company already uses.</p>
-            <div class="owns"><span class="tag">Source adapters</span><span class="tag">SQL Server</span><span class="tag">XML/config</span><span class="tag">Files</span><span class="tag">Identity</span></div>
+            <div class="module-top"><h3>Atlas</h3><span class="num">2</span></div>
+            <p>Source-neutral catalogs, relationships, rules, provenance, and structured enterprise knowledge.</p>
           </article>
 
           <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Studio</h3><span class="num">3</span></div>
-            <p>The user-facing configuration, mapping, review, and maintenance workspace where customers teach KnowledgeMap AI what their systems mean.</p>
-            <div class="owns"><span class="tag">Blueprint editor</span><span class="tag">Mappings</span><span class="tag">Catalog browser</span><span class="tag">Review queues</span></div>
+            <div class="module-top"><h3>Studio</h3><span class="num">3</span></div>
+            <p>Configuration, mapping, blueprint, review, and maintenance workspace.</p>
           </article>
 
           <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Sync</h3><span class="num">4</span></div>
-            <p>Keeps catalogs, maps, packets, and indexes current as source systems change.</p>
-            <div class="owns"><span class="tag">Scheduled scans</span><span class="tag">Change detection</span><span class="tag">Diffs</span><span class="tag">Refresh history</span></div>
+            <div class="module-top"><h3>Packets</h3><span class="num">4</span></div>
+            <p>Bounded, AI-ready context with provenance.</p>
           </article>
 
           <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Packets</h3><span class="num">5</span></div>
-            <p>The Context Packet generation engine. Packets turn mapped enterprise knowledge into useful context for AI.</p>
-            <div class="owns"><span class="tag">Packet templates</span><span class="tag">Provenance</span><span class="tag">Metadata</span><span class="tag">Scope boundaries</span></div>
+            <div class="module-top"><h3>Search</h3><span class="num">5</span></div>
+            <p>Keyword, vector, metadata, and hybrid retrieval.</p>
           </article>
 
           <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Search</h3><span class="num">6</span></div>
-            <p>The retrieval and indexing layer that finds the right enterprise context when a user or AI system asks a question.</p>
-            <div class="owns"><span class="tag">Embeddings</span><span class="tag">Hybrid retrieval</span><span class="tag">Ranking</span><span class="tag">Citations</span></div>
+            <div class="module-top"><h3>Sync</h3><span class="num">6</span></div>
+            <p>Refresh, change detection, snapshots, diffs, and freshness.</p>
           </article>
 
           <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Ask</h3><span class="num">7</span></div>
-            <p>The grounded question-answering and chat experience for applications, workflows, data, code, files, rules, and relationships.</p>
-            <div class="owns"><span class="tag">Chat UI</span><span class="tag">RAG workflow</span><span class="tag">Traceability</span><span class="tag">Feedback</span></div>
+            <div class="module-top"><h3>Observe</h3><span class="num">7</span></div>
+            <p>Job status, connector health, agent actions, retrieval quality, freshness, errors, and operational health.</p>
           </article>
 
           <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Observe</h3><span class="num">8</span></div>
-            <p>Monitoring, diagnostics, job visibility, and system health insight for the knowledge foundation.</p>
-            <div class="owns"><span class="tag">Job status</span><span class="tag">Adapter health</span><span class="tag">Freshness</span><span class="tag">Quality metrics</span></div>
+            <div class="module-top"><h3>Govern</h3><span class="num">8</span></div>
+            <p>Permissions, audit, classification, policy enforcement, and trust controls.</p>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>Review</h3><span class="num">9</span></div>
+            <p>Human-in-the-loop validation, approval, curation, stewardship, and enrichment.</p>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>Insights</h3><span class="num">10</span></div>
+            <p>Risks, gaps, dependencies, modernization opportunities, and AI-readiness signals.</p>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>Admin</h3><span class="num">11</span></div>
+            <p>Tenant, environment, license, deployment, and system administration.</p>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>API</h3><span class="num">12</span></div>
+            <p>External APIs, SDKs, webhooks, exports, and integration endpoints.</p>
           </article>
         </div>
       </div>
@@ -218,7 +289,7 @@
         <div class="section-head role-head">
           <h2>Built for the people who keep the business running</h2>
           <p>Every company has people who carry critical knowledge in their heads — the database person, the report builder, the integration owner, the application admin, the operations lead, the finance analyst, the purchasing coordinator, the quality manager, the customer service rep, and the person everyone asks when something breaks.</p>
-          <p>KnowledgeMap AI helps turn that scattered knowledge into a living map teams can monitor, improve, and act on — so small issues are easier to catch before they become expensive problems.</p>
+          <p>KnowledgeMap AI helps turn that scattered knowledge into a living map and governed agentic workspace teams can monitor, improve, and act on — so small issues are easier to catch before they become expensive problems.</p>
         </div>
         <ul class="use-case-grid">
           <li class="use-case">Customer service teams can find the right process answers, account context, escalation paths, and policy guidance without chasing tribal knowledge.</li>
@@ -237,43 +308,21 @@
       </div>
     </section>
 
-    <section id="expansion">
+    <section id="improvement">
       <div class="container">
         <div class="section-head">
-          <h2>Expansion Modules</h2>
-          <p>Additional modules that can be added after the Foundation package matures.</p>
+          <h2>Customer-driven product improvement</h2>
+          <p>Implementation work should not disappear into one-off projects. When a customer need is broadly useful, it can be proposed as a Foundation improvement. Customers can review, vote on, and help prioritize reusable improvements so the product gets stronger over time.</p>
         </div>
 
-        <div class="module-grid expansion">
-          <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Govern</h3><span class="num">9</span></div>
-            <p>Governance, permissions, audit, classification, and trust controls for enterprise AI adoption.</p>
-            <div class="owns"><span class="tag">RBAC</span><span class="tag">Audit logs</span><span class="tag">Classification</span><span class="tag">Policies</span></div>
-          </article>
-
-          <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Review</h3><span class="num">10</span></div>
-            <p>Deeper human-in-the-loop validation, curation, and enrichment workflows.</p>
-            <div class="owns"><span class="tag">Approvals</span><span class="tag">Corrections</span><span class="tag">SME annotations</span><span class="tag">Stewardship</span></div>
-          </article>
-
-          <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Insights</h3><span class="num">11</span></div>
-            <p>Uses the mapped knowledge foundation to surface risks, gaps, dependencies, modernization opportunities, and AI-readiness signals.</p>
-            <div class="owns"><span class="tag">Dependencies</span><span class="tag">Risk signals</span><span class="tag">Modernization</span><span class="tag">Scorecards</span></div>
-          </article>
-
-          <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Admin</h3><span class="num">12</span></div>
-            <p>Platform-level administration for tenants, environments, licenses, deployment settings, and operator tools.</p>
-            <div class="owns"><span class="tag">Tenants</span><span class="tag">Environments</span><span class="tag">Licenses</span><span class="tag">Feature flags</span></div>
-          </article>
-
-          <article class="module">
-            <div class="module-top"><h3>KnowledgeMap API</h3><span class="num">13</span></div>
-            <p>Exposes KnowledgeMap AI capabilities to other systems, applications, and automation workflows.</p>
-            <div class="owns"><span class="tag">REST</span><span class="tag">GraphQL</span><span class="tag">Webhooks</span><span class="tag">SDKs</span></div>
-          </article>
+        <div class="owns">
+          <span class="tag">Proposed improvements</span>
+          <span class="tag">Customer voting</span>
+          <span class="tag">Business impact notes</span>
+          <span class="tag">Under review</span>
+          <span class="tag">Planned</span>
+          <span class="tag">Released into Foundation</span>
+          <span class="tag">Customer-specific when needed</span>
         </div>
       </div>
     </section>
@@ -281,7 +330,7 @@
     <section>
       <div class="container">
         <div class="principle">
-          <p>Adapters harvest. Catalogs organize. Studio maps and maintains. Context Packets explain. Search finds. Ask answers. Govern protects. Observe monitors. Insights recommends.</p>
+          <p>Core asks, plans, acts, and reviews. Foundation maps, grounds, governs, and improves. Services tailor the platform to your business.</p>
         </div>
       </div>
     </section>
