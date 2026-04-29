@@ -135,10 +135,15 @@
     }
 
     .hero-copy {
-      max-width: 760px;
-      margin: 28px 0 0;
-      color: #c6d7eb;
-      font-size: clamp(22px, 2.4vw, 30px);
+      max-width: 860px;
+      margin: 36px 0 0;
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: #d8eaff;
+      font-size: clamp(19px, 2vw, 24px);
+      font-weight: 750;
+      line-height: 1.35;
     }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
     .role-head p + p { margin-top: 12px; }
@@ -150,9 +155,9 @@
       border-radius: var(--radius);
     }
 
-    section { padding: 72px 0; }
-    #why { padding-top: 36px; }
-    .section-head { max-width: 780px; margin-bottom: 28px; }
+    section { padding: 56px 0; }
+    #why { padding-top: 44px; }
+    .section-head { max-width: 780px; margin-bottom: 24px; }
     h2 { font-size: clamp(34px, 4vw, 58px); line-height: 1; letter-spacing: -.055em; margin: 0 0 18px; }
     .section-head p, .large-copy { color: var(--muted); font-size: 20px; margin: 0; }
 
@@ -216,19 +221,21 @@
       <div class="container">
         <div class="section-head role-head">
           <h2>Built for the people who keep the business running</h2>
-          <p>Practical enterprise AI foundations mapped to your real systems, workflows, data, files, code, and people. Fast, affordable, and owned by your team.</p>
           <p>Every company has people who know how the business really works — the report builder, the operations lead, the finance analyst, the purchasing coordinator, the quality manager, the customer service rep, and the person everyone asks when something breaks.</p>
           <p>GetYouSomeAI helps turn that scattered knowledge into a living map and governed agentic workspace the whole team can use.</p>
         </div>
         <div class="grid-3">
           <div class="card">
-            <p>Customer service, finance, purchasing, quality, operations, and reporting teams can get answers without relying on tribal knowledge.</p>
+            <h3>Leadership</h3>
+            <p>Leadership gets earlier visibility into problems that usually stay hidden until they become expensive, urgent, or political.</p>
           </div>
           <div class="card">
-            <p>Leaders can see risks, ownership gaps, and modernization opportunities before they become urgent initiatives.</p>
+            <h3>Business teams</h3>
+            <p>Sales, marketing, finance, purchasing, operations, quality, and the rest of your teams can get answers faster without relying on tribal knowledge.</p>
           </div>
           <div class="card">
-            <p>Technical teams can trace systems, data, code, integrations, and dependencies when deeper work is needed.</p>
+            <h3>Technical teams</h3>
+            <p>Technical teams can move faster, automate more, and fix more of what they already know needs fixing — without losing time rediscovering how everything works.</p>
           </div>
         </div>
       </div>
@@ -238,7 +245,20 @@
       <div class="container">
         <div class="section-head">
           <h2>From scattered knowledge to controlled action.</h2>
-          <p>Generic AI tools can answer generic questions. GetYouSomeAI grounds AI in how your company actually works — then uses that context to help teams ask, plan, create, act, review, and improve with traceability.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Gather the scattered context</h3>
+            <p>Connect the systems, files, code, workflows, reports, and tribal knowledge your business already depends on.</p>
+          </div>
+          <div class="card">
+            <h3>Turn it into a living map</h3>
+            <p>Organize that context into relationships, ownership, rules, dependencies, and reusable knowledge your team can maintain.</p>
+          </div>
+          <div class="card">
+            <h3>Move from answers to action</h3>
+            <p>Use the map to ask better questions, create useful outputs, take approved actions, review results, and improve over time.</p>
+          </div>
         </div>
       </div>
     </section>
