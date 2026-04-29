@@ -81,6 +81,7 @@
     .module h3 { margin: 0; font-size: 24px; letter-spacing: -.035em; }
     .num { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 13px; display: grid; place-items: center; color: #03101c; font-weight: 900; background: linear-gradient(135deg, var(--cyan), var(--blue)); }
     .expansion .num { background: linear-gradient(135deg, var(--orange), var(--magenta)); }
+    .expansion .module:last-child { grid-column: 1 / -1; }
     .module p { margin: 0 0 16px; color: var(--muted); }
     .owns { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag { border: 1px solid rgba(255,255,255,.12); color: #d7e7fa; background: rgba(255,255,255,.05); border-radius: 999px; padding: 6px 10px; font-size: 13px; }
@@ -120,7 +121,7 @@
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="GetYouSomeAI home">
         <span class="mark" aria-hidden="true"></span>
-        <span>KnowledgeMap AI</span>
+        <span>GetYouSomeAI</span>
       </a>
       <nav class="links" aria-label="Main navigation">
         <a href="index.html">Home</a>
@@ -221,11 +222,11 @@
         </div>
         <ul class="use-case-grid">
           <li class="use-case">Customer service teams can find the right process answers, account context, escalation paths, and policy guidance without chasing tribal knowledge.</li>
-          <li class="use-case">Purchasing and procurement teams can monitor supplier data, approvals, item records, contracts, and buying workflows for gaps or inconsistencies.</li>
-          <li class="use-case">Finance teams can trace reports, reconciliations, cost drivers, approvals, and financial data sources before small errors become larger issues.</li>
+          <li class="use-case">Purchasing and procurement teams can catch supplier, contract, approval, and item-data issues before they delay orders or create rework.</li>
+          <li class="use-case">Finance teams can catch reconciliation issues, cost-driver confusion, approval gaps, and report mismatches before small errors become larger problems.</li>
           <li class="use-case">Quality teams can connect procedures, exceptions, audits, corrective actions, and compliance evidence so recurring problems are easier to spot and prevent.</li>
           <li class="use-case">Operations teams can track jobs, handoffs, schedules, exceptions, and process gaps before they turn into daily fire drills.</li>
-          <li class="use-case">Reporting and analytics teams can align metric definitions, flag conflicting numbers, and trace dashboards back to trusted source systems.</li>
+          <li class="use-case">Reporting and analytics teams can align metric definitions, flag conflicting numbers, and explain where dashboard numbers actually come from.</li>
           <li class="use-case">Application owners can monitor permissions, users, workflows, dependencies, and change impacts across the systems they are responsible for.</li>
           <li class="use-case">File and knowledge owners can identify stale documents, permission risks, missing ownership, duplicate content, and knowledge gaps across shared repositories.</li>
           <li class="use-case">Leaders can see risks, ownership gaps, modernization opportunities, and AI-readiness signals before they become urgent initiatives.</li>
