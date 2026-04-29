@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KnowledgeMap AI Platform — Get You Some AI</title>
+  <meta name="description" content="The KnowledgeMap AI platform modules behind Get You Some AI." />
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: #0d1a2d;
+      --text: #edf6ff;
+      --muted: #a8b8cc;
+      --line: rgba(255,255,255,.12);
+      --cyan: #29d3ff;
+      --blue: #4b7dff;
+      --magenta: #ff3fd1;
+      --green: #72ffb6;
+      --orange: #ffb86b;
+      --shadow: 0 24px 80px rgba(0,0,0,.35);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(41,211,255,.16), transparent 28%),
+        radial-gradient(circle at 88% 10%, rgba(75,125,255,.18), transparent 30%),
+        linear-gradient(180deg, #06101d 0%, #081320 48%, #050b14 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(7,17,31,.74);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 76px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 850; letter-spacing: -.03em; }
+    .mark { width: 38px; height: 38px; border-radius: 13px; background: linear-gradient(135deg, var(--cyan), var(--blue) 52%, var(--magenta)); box-shadow: 0 0 32px rgba(41,211,255,.28); position: relative; overflow: hidden; }
+    .mark:after { content: ""; position: absolute; inset: 9px; border: 2px solid rgba(255,255,255,.9); border-radius: 50%; box-shadow: 13px -4px 0 -7px rgba(255,255,255,.9), -10px 9px 0 -6px rgba(255,255,255,.9); }
+    .links { display: flex; align-items: center; gap: 22px; color: var(--muted); font-size: 14px; }
+    .links a:hover { color: var(--text); }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 18px; border-radius: 999px; font-weight: 800; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); }
+    .button.primary { background: linear-gradient(135deg, var(--cyan), var(--blue)); color: #03101c; border: 0; box-shadow: 0 18px 60px rgba(41,211,255,.25); }
+
+    .hero { padding: 88px 0 42px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.05); font-size: 14px; margin-bottom: 24px; }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 22px var(--green); }
+    h1 { max-width: 980px; margin: 0; font-size: clamp(48px, 7vw, 88px); line-height: .94; letter-spacing: -.07em; }
+    .hero-copy { max-width: 840px; margin: 26px 0 0; color: #c6d7eb; font-size: clamp(18px, 2vw, 23px); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+    section { padding: 58px 0; }
+    .section-head { max-width: 860px; margin-bottom: 24px; }
+    h2 { font-size: clamp(32px, 4vw, 54px); line-height: 1; letter-spacing: -.055em; margin: 0 0 18px; }
+    .section-head p { color: var(--muted); font-size: 20px; margin: 0; }
+
+    .module-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .module {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 24px;
+      min-height: 215px;
+    }
+    .module-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
+    .module h3 { margin: 0; font-size: 24px; letter-spacing: -.035em; }
+    .num { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 13px; display: grid; place-items: center; color: #03101c; font-weight: 900; background: linear-gradient(135deg, var(--cyan), var(--blue)); }
+    .expansion .num { background: linear-gradient(135deg, var(--orange), var(--magenta)); }
+    .module p { margin: 0 0 16px; color: var(--muted); }
+    .owns { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { border: 1px solid rgba(255,255,255,.12); color: #d7e7fa; background: rgba(255,255,255,.05); border-radius: 999px; padding: 6px 10px; font-size: 13px; }
+
+    .principle {
+      border: 1px solid rgba(255,255,255,.15);
+      background:
+        linear-gradient(135deg, rgba(41,211,255,.18), rgba(255,63,209,.1)),
+        rgba(255,255,255,.05);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+    .principle p { margin: 0; font-size: clamp(25px, 3.5vw, 42px); line-height: 1.08; letter-spacing: -.052em; font-weight: 900; }
+    .milestone { border-left: 4px solid var(--cyan); padding: 8px 0 8px 22px; color: var(--muted); font-size: 19px; max-width: 960px; }
+
+    footer { padding: 34px 0 54px; color: var(--muted); border-top: 1px solid var(--line); }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+    @media (max-width: 820px) {
+      .links { display: none; }
+      .hero { padding-top: 72px; }
+      .module-grid { grid-template-columns: 1fr; }
+      .container { width: min(100% - 28px, 1160px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Get You Some AI home">
+        <span class="mark" aria-hidden="true"></span>
+        <span>KnowledgeMap AI</span>
+      </a>
+      <nav class="links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="#foundation">Foundation</a>
+        <a href="#expansion">Expansion</a>
+        <a class="button" href="mailto:hello@getyousomeai.com">Pilot conversations</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow"><span class="pulse"></span> The platform behind Get You Some AI</div>
+        <h1>KnowledgeMap AI Platform</h1>
+        <p class="hero-copy">KnowledgeMap AI maps a company’s systems, workflows, files, scripts, identity, data, and tribal knowledge into an AI-ready foundation the customer’s internal team can own, maintain, and expand.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="index.html">Back to homepage</a>
+          <a class="button" href="#foundation">View modules</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="foundation">
+      <div class="container">
+        <div class="section-head">
+          <h2>KnowledgeMap Foundation</h2>
+          <p>The base product grouping required to run the initial KnowledgeMap AI platform: harvest enterprise context, organize it into catalogs, maintain maps and blueprints, generate Context Packets, index them for retrieval, and ask grounded questions with provenance.</p>
+        </div>
+
+        <div class="module-grid">
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Atlas</h3><span class="num">1</span></div>
+            <p>The canonical knowledge model layer. Atlas is the structured map of the customer’s enterprise context.</p>
+            <div class="owns"><span class="tag">Catalogs</span><span class="tag">Relationships</span><span class="tag">Lineage</span><span class="tag">Versioning</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Connect</h3><span class="num">2</span></div>
+            <p>The adapter and ingestion framework. Connect gathers raw material from the systems the company already uses.</p>
+            <div class="owns"><span class="tag">Source adapters</span><span class="tag">SQL Server</span><span class="tag">XML/config</span><span class="tag">Files</span><span class="tag">Identity</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Studio</h3><span class="num">3</span></div>
+            <p>The user-facing configuration, mapping, review, and maintenance workspace where customers teach KnowledgeMap AI what their systems mean.</p>
+            <div class="owns"><span class="tag">Blueprint editor</span><span class="tag">Mappings</span><span class="tag">Catalog browser</span><span class="tag">Review queues</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Sync</h3><span class="num">4</span></div>
+            <p>Keeps catalogs, maps, packets, and indexes current as source systems change.</p>
+            <div class="owns"><span class="tag">Scheduled scans</span><span class="tag">Change detection</span><span class="tag">Diffs</span><span class="tag">Refresh history</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Packets</h3><span class="num">5</span></div>
+            <p>The Context Packet generation engine. Packets turn mapped enterprise knowledge into useful context for AI.</p>
+            <div class="owns"><span class="tag">Packet templates</span><span class="tag">Provenance</span><span class="tag">Metadata</span><span class="tag">Scope boundaries</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Search</h3><span class="num">6</span></div>
+            <p>The retrieval and indexing layer that finds the right enterprise context when a user or AI system asks a question.</p>
+            <div class="owns"><span class="tag">Embeddings</span><span class="tag">Hybrid retrieval</span><span class="tag">Ranking</span><span class="tag">Citations</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Ask</h3><span class="num">7</span></div>
+            <p>The grounded question-answering and chat experience for applications, workflows, data, scripts, files, rules, and relationships.</p>
+            <div class="owns"><span class="tag">Chat UI</span><span class="tag">RAG workflow</span><span class="tag">Traceability</span><span class="tag">Feedback</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Observe</h3><span class="num">8</span></div>
+            <p>Monitoring, diagnostics, job visibility, and system health insight for the knowledge foundation.</p>
+            <div class="owns"><span class="tag">Job status</span><span class="tag">Adapter health</span><span class="tag">Freshness</span><span class="tag">Quality metrics</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="expansion">
+      <div class="container">
+        <div class="section-head">
+          <h2>Expansion Modules</h2>
+          <p>Additional modules that can be added after the Foundation package matures.</p>
+        </div>
+
+        <div class="module-grid expansion">
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Govern</h3><span class="num">9</span></div>
+            <p>Governance, permissions, audit, classification, and trust controls for enterprise AI adoption.</p>
+            <div class="owns"><span class="tag">RBAC</span><span class="tag">Audit logs</span><span class="tag">Classification</span><span class="tag">Policies</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Review</h3><span class="num">10</span></div>
+            <p>Deeper human-in-the-loop validation, curation, and enrichment workflows.</p>
+            <div class="owns"><span class="tag">Approvals</span><span class="tag">Corrections</span><span class="tag">SME annotations</span><span class="tag">Stewardship</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Insights</h3><span class="num">11</span></div>
+            <p>Uses the mapped knowledge foundation to surface risks, gaps, dependencies, modernization opportunities, and AI-readiness signals.</p>
+            <div class="owns"><span class="tag">Dependencies</span><span class="tag">Risk signals</span><span class="tag">Modernization</span><span class="tag">Scorecards</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap Admin</h3><span class="num">12</span></div>
+            <p>Platform-level administration for tenants, environments, licenses, deployment settings, and operator tools.</p>
+            <div class="owns"><span class="tag">Tenants</span><span class="tag">Environments</span><span class="tag">Licenses</span><span class="tag">Feature flags</span></div>
+          </article>
+
+          <article class="module">
+            <div class="module-top"><h3>KnowledgeMap API</h3><span class="num">13</span></div>
+            <p>Exposes KnowledgeMap AI capabilities to other systems, applications, and automation workflows.</p>
+            <div class="owns"><span class="tag">REST</span><span class="tag">GraphQL</span><span class="tag">Webhooks</span><span class="tag">SDKs</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="principle">
+          <p>Adapters harvest. Catalogs organize. Studio maps and maintains. Context Packets explain. Search finds. Ask answers. Govern protects. Observe monitors. Insights recommends.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>First major product milestone</h2>
+        </div>
+        <p class="milestone">Given a folder of structured application files, configuration files, scripts, schema exports, and sample documentation, KnowledgeMap AI harvests the source material through Connect, applies user-maintainable reference maps in Studio, promotes the result into Atlas catalogs, generates Context Packets, indexes them through Search, and lets the user ask grounded questions through Ask.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© 2026 KnowledgeMap AI. Get You Some AI is the marketing doorway.</div>
+      <div><a href="index.html">Home</a></div>
+    </div>
+  </footer>
+</body>
+</html>
