@@ -66,7 +66,8 @@
     h2 { font-size: clamp(32px, 4vw, 54px); line-height: 1; letter-spacing: -.055em; margin: 0 0 18px; }
     .section-head p { color: var(--muted); font-size: 20px; margin: 0; }
 
-    .module-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .module-grid, .use-case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .use-case-grid { list-style: none; margin: 0; padding: 0; }
     .module {
       border: 1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
@@ -82,6 +83,14 @@
     .module p { margin: 0 0 16px; color: var(--muted); }
     .owns { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag { border: 1px solid rgba(255,255,255,.12); color: #d7e7fa; background: rgba(255,255,255,.05); border-radius: 999px; padding: 6px 10px; font-size: 13px; }
+    .use-case {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-radius: 16px;
+      padding: 15px 16px;
+      color: #d7e7fa;
+      font-weight: 700;
+    }
 
     .principle {
       border: 1px solid rgba(255,255,255,.15);
@@ -93,7 +102,6 @@
       box-shadow: var(--shadow);
     }
     .principle p { margin: 0; font-size: clamp(25px, 3.5vw, 42px); line-height: 1.08; letter-spacing: -.052em; font-weight: 900; }
-    .milestone { border-left: 4px solid var(--cyan); padding: 8px 0 8px 22px; color: var(--muted); font-size: 19px; max-width: 960px; }
 
     footer { padding: 34px 0 54px; color: var(--muted); border-top: 1px solid var(--line); }
     .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
@@ -101,7 +109,7 @@
     @media (max-width: 820px) {
       .links { display: none; }
       .hero { padding-top: 72px; }
-      .module-grid { grid-template-columns: 1fr; }
+      .module-grid, .use-case-grid { grid-template-columns: 1fr; }
       .container { width: min(100% - 28px, 1160px); }
     }
   </style>
@@ -117,7 +125,7 @@
         <a href="index.html">Home</a>
         <a href="#foundation">Foundation</a>
         <a href="#expansion">Expansion</a>
-        <a class="button" href="mailto:hello@getyousomeai.com">Pilot conversations</a>
+        <a class="button" href="mailto:hello@getyousomeai.com?subject=Pilot%20conversation%20for%20GetYouSomeAI">Pilot conversations</a>
       </nav>
     </div>
   </header>
@@ -125,12 +133,21 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="eyebrow"><span class="pulse"></span> The platform behind GetYouSomeAI</div>
+        <div class="eyebrow"><span class="pulse"></span> The platform behind GetYouSomeAI.</div>
         <h1>KnowledgeMap AI Platform</h1>
-        <p class="hero-copy">KnowledgeMap AI maps a company’s systems, workflows, files, scripts, identity, data, and tribal knowledge into an AI-ready foundation the customer’s internal team can own, maintain, and expand.</p>
+        <p class="hero-copy">KnowledgeMap AI is an AI-ready knowledge foundation for how your business works. It organizes enterprise context into maps, catalogs, blueprints, context packets, search, and grounded answers your team can maintain over time.</p>
         <div class="hero-actions">
           <a class="button primary" href="index.html">Back to homepage</a>
           <a class="button" href="#foundation">View modules</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>A living map of the business</h2>
+          <p>KnowledgeMap AI is not just a chatbot, not just a data warehouse, and not just documentation. It is a living map of systems, workflows, data, files, code, rules, and people — maintained as the business changes and used to ground practical AI experiences.</p>
         </div>
       </div>
     </section>
@@ -181,7 +198,7 @@
 
           <article class="module">
             <div class="module-top"><h3>KnowledgeMap Ask</h3><span class="num">7</span></div>
-            <p>The grounded question-answering and chat experience for applications, workflows, data, scripts, files, rules, and relationships.</p>
+            <p>The grounded question-answering and chat experience for applications, workflows, data, code, files, rules, and relationships.</p>
             <div class="owns"><span class="tag">Chat UI</span><span class="tag">RAG workflow</span><span class="tag">Traceability</span><span class="tag">Feedback</span></div>
           </article>
 
@@ -191,6 +208,25 @@
             <div class="owns"><span class="tag">Job status</span><span class="tag">Adapter health</span><span class="tag">Freshness</span><span class="tag">Quality metrics</span></div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Practical use cases the map can support</h2>
+          <p>The map becomes a shared foundation for useful AI and operational work after the business context is organized.</p>
+        </div>
+        <ul class="use-case-grid">
+          <li class="use-case">AI-powered search across business context</li>
+          <li class="use-case">Grounded question-answering with provenance</li>
+          <li class="use-case">Reporting and metric alignment</li>
+          <li class="use-case">Data warehouse cleanup and planning</li>
+          <li class="use-case">EDI translation and integration support</li>
+          <li class="use-case">Workflow and system modernization</li>
+          <li class="use-case">Tribal knowledge capture</li>
+          <li class="use-case">Dependency and ownership discovery</li>
+        </ul>
       </div>
     </section>
 
@@ -243,14 +279,6 @@
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="section-head">
-          <h2>First major product milestone</h2>
-        </div>
-        <p class="milestone">Given a folder of structured application files, configuration files, scripts, schema exports, and sample documentation, KnowledgeMap AI harvests the source material through Connect, applies user-maintainable reference maps in Studio, promotes the result into Atlas catalogs, generates Context Packets, indexes them through Search, and lets the user ask grounded questions through Ask.</p>
-      </div>
-    </section>
   </main>
 
   <footer>
