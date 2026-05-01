@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KnowledgeMap AI Platform — GetYouSomeAI</title>
-  <meta name="description" content="The KnowledgeMap AI platform modules behind GetYouSomeAI." />
+  <title>KnowledgeMap AI powered by ControlGate — GetYouSomeAI</title>
+  <meta name="description" content="KnowledgeMap AI maps messy existing systems and uses ControlGate to keep AI action approved, reviewable, and controlled." />
   <style>
     :root {
       --bg: #07111f;
@@ -86,6 +86,8 @@
     .module p { margin: 0 0 16px; color: var(--muted); }
     .owns { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag { border: 1px solid rgba(255,255,255,.12); color: #d7e7fa; background: rgba(255,255,255,.05); border-radius: 999px; padding: 6px 10px; font-size: 13px; }
+    .pattern-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .pattern-step { border: 1px solid var(--line); background: rgba(255,255,255,.05); border-radius: 14px; padding: 14px; font-weight: 800; color: #d7e7fa; }
     .use-case {
       border: 1px solid var(--line);
       background: rgba(255,255,255,.05);
@@ -110,6 +112,7 @@
     .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
     @media (max-width: 820px) {
+      body { overflow-x: hidden; }
       .links { display: none; }
       .mobile-menu-toggle {
         display: inline-flex;
@@ -157,9 +160,11 @@
       }
       .mobile-menu a:hover { color: var(--text); background: rgba(255,255,255,.06); }
       .mobile-menu .button { color: var(--text); margin-top: 4px; }
+      h1 { font-size: 32px; line-height: 1.04; letter-spacing: -.035em; overflow-wrap: break-word; }
+      h2 { font-size: 26px; line-height: 1.08; letter-spacing: -.025em; overflow-wrap: break-word; }
       .hero { padding-top: 72px; }
-      .module-grid, .use-case-grid, .product-grid { grid-template-columns: 1fr; }
-      .container { width: min(100% - 28px, 1160px); }
+      .module-grid, .use-case-grid, .product-grid, .pattern-grid { grid-template-columns: 1fr; }
+      .container { width: min(calc(100vw - 28px), 1160px); }
       header .container { width: min(calc(100vw - 28px), 1160px); }
     }
   </style>
@@ -173,7 +178,7 @@
       </a>
       <nav class="links" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="platform.html">Platform</a>
+        <a href="platform.html">KnowledgeMap AI</a>
         <a href="avoid-the-circus.html">Avoid the Circus</a>
         <a class="button" href="mailto:hello@getyousomeai.com?subject=Pilot%20conversation%20for%20GetYouSomeAI">Pilot conversations</a>
       </nav>
@@ -184,7 +189,7 @@
     </div>
     <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
       <a href="index.html">Home</a>
-      <a href="platform.html">Platform</a>
+      <a href="platform.html">KnowledgeMap AI</a>
       <a href="avoid-the-circus.html">Avoid the Circus</a>
       <a class="button" href="mailto:hello@getyousomeai.com?subject=Pilot%20conversation%20for%20GetYouSomeAI">Pilot conversations</a>
     </nav>
@@ -193,12 +198,12 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="eyebrow"><span class="pulse"></span> The platform behind GetYouSomeAI.</div>
+        <div class="eyebrow"><span class="pulse"></span> KnowledgeMap AI powered by ControlGate</div>
         <h1>AI works better when it has a map.</h1>
-        <p class="hero-copy">KnowledgeMap AI combines a governed agentic core with a living map of the business. Teams can ask, plan, create, act, review, automate, and improve using approved context, tools, workflows, and traceable results.</p>
+        <p class="hero-copy">KnowledgeMap AI connects to existing systems, maps what is already there, and uses ControlGate to help teams inspect, plan, propose, approve, implement, review, and improve real business changes.</p>
         <div class="hero-actions">
           <a class="button primary" href="index.html">Back to homepage</a>
-          <a class="button" href="#core">View Core</a>
+          <a class="button" href="#map-layer">View the map layer</a>
         </div>
       </div>
     </section>
@@ -206,8 +211,8 @@
     <section>
       <div class="container">
         <div class="section-head">
-          <h2>A living map of the business</h2>
-          <p>KnowledgeMap AI is not just a chatbot, not just a data warehouse, and not just documentation. It combines a living map of systems, workflows, data, files, code, rules, and people with a governed agentic workspace that can turn business context into creation, action, review, and improvement.</p>
+          <h2>KnowledgeMap provides the understanding. ControlGate controls the action.</h2>
+          <p>The map gives AI understanding. ControlGate keeps action approved, reviewable, and controlled. The agent may inspect, plan, and propose — but action goes through a control gate.</p>
         </div>
       </div>
     </section>
@@ -215,128 +220,106 @@
     <section id="products">
       <div class="container">
         <div class="section-head">
-          <h2>Two product layers, plus implementation services</h2>
-          <p>KnowledgeMap AI is intentionally simple to buy: start with Core, expand into Foundation, and use implementation services when specialized work is needed.</p>
+          <h2>One product, two connected layers, services when needed</h2>
+          <p>KnowledgeMap AI is the enterprise product. ControlGate is the approval-gated action layer that powers it and can power future GetYouSomeAI products.</p>
         </div>
 
         <div class="product-grid services">
           <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Core</h3><span class="num">1</span></div>
-            <p>The starting product: a governed agentic workspace with essential connectivity. Core helps users ask, plan, create, act, review, and automate through approved tools, human approval gates, task history, execution logs, and result summaries.</p>
-            <div class="owns"><span class="tag">Agentic workspace</span><span class="tag">Ask / Plan / Create / Act / Review</span><span class="tag">Essential connectors</span><span class="tag">Human approval</span><span class="tag">Execution logs</span><span class="tag">Task history</span></div>
+            <div class="module-top"><h3>KnowledgeMap AI</h3><span class="num">1</span></div>
+            <p>The map and understanding layer for messy existing systems: old SQL data warehouses, EDI processes, fragile scripts, files, workflows, rules, dependencies, and tribal knowledge.</p>
+            <div class="owns"><span class="tag">Systems</span><span class="tag">Objects</span><span class="tag">Relationships</span><span class="tag">Rules</span><span class="tag">Dependencies</span><span class="tag">Context packets</span></div>
           </article>
 
           <article class="module">
-            <div class="module-top"><h3>KnowledgeMap Foundation</h3><span class="num">2</span></div>
-            <p>The full platform around Core: the living business map, productized context infrastructure, retrieval, observability, governance, review, insights, administration, APIs, and reusable capabilities that make the agent smarter and easier to maintain.</p>
-            <div class="owns"><span class="tag">Living business map</span><span class="tag">Catalogs</span><span class="tag">Blueprints</span><span class="tag">Context packets</span><span class="tag">Search</span><span class="tag">Sync</span><span class="tag">Observe</span><span class="tag">Governance</span><span class="tag">Review</span><span class="tag">Insights</span><span class="tag">API</span></div>
+            <div class="module-top"><h3>ControlGate</h3><span class="num">2</span></div>
+            <p>The approval-gated AI workbench that turns AI intent into approved, reviewable action through inspected context, proposed work, approval gates, handoff, review, and audit history.</p>
+            <div class="owns"><span class="tag">Inspect</span><span class="tag">Plan</span><span class="tag">Propose</span><span class="tag">Approve</span><span class="tag">Hand off</span><span class="tag">Review</span></div>
           </article>
 
           <article class="module">
             <div class="module-top"><h3>Implementation Services</h3><span class="num">3</span></div>
-            <p>Custom implementation, integration, migration, workflow, automation, and specialized agent work for customers who need help applying KnowledgeMap AI to their environment. Reusable improvements can be folded back into Foundation.</p>
-            <div class="owns"><span class="tag">Custom integrations</span><span class="tag">Workflow automation</span><span class="tag">Specialized agents</span><span class="tag">Migration support</span><span class="tag">Roadmap feedback</span><span class="tag">Productized improvements</span></div>
+            <p>Setup, integration, migration, workflow, automation, and specialized implementation work for customers who need help applying the product to their environment.</p>
+            <div class="owns"><span class="tag">Custom integrations</span><span class="tag">Workflow automation</span><span class="tag">Migration support</span><span class="tag">Roadmap feedback</span><span class="tag">Productized improvements</span></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="core">
+    <section id="map-layer">
       <div class="container">
         <div class="section-head">
-          <h2>KnowledgeMap Core capabilities</h2>
-          <p>Core is the first product layer. It gives teams a governed way to move from conversation to creation, controlled action, review, and improvement.</p>
+          <h2>KnowledgeMap AI maps what exists</h2>
+          <p>Map what exists. Understand how it works. Safely improve or replace it through approved AI action.</p>
         </div>
 
         <div class="module-grid">
           <article class="module">
-            <div class="module-top"><h3>Conversational task workspace</h3><span class="num">1</span></div>
-            <p>A controlled workspace for asking questions, shaping tasks, creating outputs, reviewing plans, and tracking work from conversation through action.</p>
-            <div class="owns"><span class="tag">Ask / Plan / Create / Act / Review workflows</span><span class="tag">Task and action history</span><span class="tag">Result summaries</span></div>
+            <div class="module-top"><h3>Systems and objects</h3><span class="num">1</span></div>
+            <p>Inspect existing applications, databases, repositories, file stores, workflows, tables, fields, jobs, documents, and business objects.</p>
+            <div class="owns"><span class="tag">Systems</span><span class="tag">Objects</span><span class="tag">Fields</span><span class="tag">Metadata</span></div>
           </article>
 
           <article class="module">
-            <div class="module-top"><h3>Controlled action layer</h3><span class="num">2</span></div>
-            <p>Tool and connector access with human approval gates, action policies, review-before-action workflows, and error recovery.</p>
-            <div class="owns"><span class="tag">Tool and connector access</span><span class="tag">Human approval gates</span><span class="tag">Action policies</span><span class="tag">Error recovery</span></div>
+            <div class="module-top"><h3>Relationships and rules</h3><span class="num">2</span></div>
+            <p>Capture relationships, mappings, validation rules, ownership, dependencies, documentation, history, statistics, and business context.</p>
+            <div class="owns"><span class="tag">Relationships</span><span class="tag">Mappings</span><span class="tag">Rules</span><span class="tag">Dependencies</span></div>
           </article>
 
           <article class="module">
-            <div class="module-top"><h3>Execution visibility</h3><span class="num">3</span></div>
-            <p>Execution logs, task history, result summaries, and essential connectors so teams can understand what happened and why.</p>
-            <div class="owns"><span class="tag">Execution logs</span><span class="tag">Task history</span><span class="tag">Result summaries</span><span class="tag">Essential connectors</span></div>
+            <div class="module-top"><h3>Context packets</h3><span class="num">3</span></div>
+            <p>Package relevant mapped context so AI can work from the right source material instead of guessing from a vague prompt.</p>
+            <div class="owns"><span class="tag">Documentation</span><span class="tag">History</span><span class="tag">Context packets</span><span class="tag">Provenance</span></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="foundation">
+    <section id="controlgate">
       <div class="container">
         <div class="section-head">
-          <h2>KnowledgeMap Foundation capabilities</h2>
-          <p>Foundation adds the productized business map and platform capabilities around Core.</p>
+          <h2>ControlGate keeps action approved</h2>
+          <p>ControlGate turns AI intent into approved, reviewable action. It is a controlled AI workbench, not uncontrolled autonomous execution.</p>
         </div>
 
         <div class="module-grid">
           <article class="module">
-            <div class="module-top"><h3>Connect</h3><span class="num">1</span></div>
-            <p>Safe access to files, repositories, databases, APIs, identity providers, business systems, and other enterprise sources.</p>
+            <div class="module-top"><h3>Chat and orchestration</h3><span class="num">1</span></div>
+            <p>A workbench for inspected context, planning, proposal generation, task orchestration, and controlled handoff.</p>
+            <div class="owns"><span class="tag">Chat/workbench</span><span class="tag">Orchestration</span><span class="tag">Planning</span></div>
           </article>
 
           <article class="module">
-            <div class="module-top"><h3>Atlas</h3><span class="num">2</span></div>
-            <p>Source-neutral catalogs, relationships, rules, provenance, and structured enterprise knowledge.</p>
+            <div class="module-top"><h3>Approval gates</h3><span class="num">2</span></div>
+            <p>AI can inspect, plan, and propose. Writes, schema changes, deployments, and other risky actions require human approval.</p>
+            <div class="owns"><span class="tag">Proposal generation</span><span class="tag">Approval gates</span><span class="tag">Policies</span></div>
           </article>
 
           <article class="module">
-            <div class="module-top"><h3>Studio</h3><span class="num">3</span></div>
-            <p>Configuration, mapping, blueprint, review, and maintenance workspace.</p>
+            <div class="module-top"><h3>Review and history</h3><span class="num">3</span></div>
+            <p>Review results, preserve action history, and make it clear what happened, who approved it, and what changed.</p>
+            <div class="owns"><span class="tag">Implementation handoff</span><span class="tag">Result review</span><span class="tag">Audit history</span></div>
           </article>
+        </div>
+      </div>
+    </section>
 
-          <article class="module">
-            <div class="module-top"><h3>Packets</h3><span class="num">4</span></div>
-            <p>Bounded, AI-ready context with provenance.</p>
-          </article>
-
-          <article class="module">
-            <div class="module-top"><h3>Search</h3><span class="num">5</span></div>
-            <p>Keyword, vector, metadata, and hybrid retrieval.</p>
-          </article>
-
-          <article class="module">
-            <div class="module-top"><h3>Sync</h3><span class="num">6</span></div>
-            <p>Refresh, change detection, snapshots, diffs, and freshness.</p>
-          </article>
-
-          <article class="module">
-            <div class="module-top"><h3>Observe</h3><span class="num">7</span></div>
-            <p>Job status, connector health, agent actions, retrieval quality, freshness, errors, and operational health.</p>
-          </article>
-
-          <article class="module">
-            <div class="module-top"><h3>Govern</h3><span class="num">8</span></div>
-            <p>Permissions, audit, classification, policy enforcement, and trust controls.</p>
-          </article>
-
-          <article class="module">
-            <div class="module-top"><h3>Review</h3><span class="num">9</span></div>
-            <p>Human-in-the-loop validation, approval, curation, stewardship, and enrichment.</p>
-          </article>
-
-          <article class="module">
-            <div class="module-top"><h3>Insights</h3><span class="num">10</span></div>
-            <p>Risks, gaps, dependencies, modernization opportunities, and AI-readiness signals.</p>
-          </article>
-
-          <article class="module">
-            <div class="module-top"><h3>Admin</h3><span class="num">11</span></div>
-            <p>Tenant, environment, license, deployment, and system administration.</p>
-          </article>
-
-          <article class="module">
-            <div class="module-top"><h3>API</h3><span class="num">12</span></div>
-            <p>External APIs, SDKs, webhooks, exports, and integration endpoints.</p>
-          </article>
+    <section id="pattern">
+      <div class="container">
+        <div class="section-head">
+          <h2>The product pattern</h2>
+          <p>The same loop can apply to websites, SQL databases, EDI processes, file workflows, API integrations, legacy business systems, and future customer systems.</p>
+        </div>
+        <div class="pattern-grid">
+          <div class="pattern-step">Existing system</div>
+          <div class="pattern-step">Objects</div>
+          <div class="pattern-step">Relationships</div>
+          <div class="pattern-step">Rules</div>
+          <div class="pattern-step">Mappings</div>
+          <div class="pattern-step">Problems</div>
+          <div class="pattern-step">Proposed changes</div>
+          <div class="pattern-step">Approved execution</div>
+          <div class="pattern-step">New managed version</div>
         </div>
       </div>
     </section>
@@ -344,23 +327,13 @@
     <section>
       <div class="container">
         <div class="section-head role-head">
-          <h2>Built for the people who keep the business running</h2>
-          <p>Every company has people who carry critical knowledge in their heads — the database person, the report builder, the integration owner, the application admin, the operations lead, the finance analyst, the purchasing coordinator, the quality manager, the customer service rep, and the person everyone asks when something breaks.</p>
-          <p>KnowledgeMap AI helps turn that scattered knowledge into a living map and governed agentic workspace teams can monitor, create from, improve, and act on — so small issues are easier to catch before they become expensive problems.</p>
+          <h2>Platform use cases</h2>
+          <p>KnowledgeMap AI starts with the systems customers already have and uses ControlGate to keep proposed changes controlled.</p>
         </div>
         <ul class="use-case-grid">
-          <li class="use-case">Customer service teams can find the right process answers, account context, escalation paths, and policy guidance without chasing tribal knowledge.</li>
-          <li class="use-case">Purchasing and procurement teams can catch supplier, contract, approval, and item-data issues before they delay orders or create rework.</li>
-          <li class="use-case">Finance teams can catch reconciliation issues, cost-driver confusion, approval gaps, and report mismatches before small errors become larger problems.</li>
-          <li class="use-case">Quality teams can connect procedures, exceptions, audits, corrective actions, and compliance evidence so recurring problems are easier to spot and prevent.</li>
-          <li class="use-case">Operations teams can track jobs, handoffs, schedules, exceptions, and process gaps before they turn into daily fire drills.</li>
-          <li class="use-case">Reporting and analytics teams can align metric definitions, flag conflicting numbers, and explain where dashboard numbers actually come from.</li>
-          <li class="use-case">Application owners can monitor permissions, users, workflows, dependencies, and change impacts across the systems they are responsible for.</li>
-          <li class="use-case">File and knowledge owners can identify stale documents, permission risks, missing ownership, duplicate content, and knowledge gaps across shared repositories.</li>
-          <li class="use-case">Leaders can see risks, ownership gaps, modernization opportunities, and AI-readiness signals before they become urgent initiatives.</li>
-          <li class="use-case">Integration and EDI teams can monitor mappings, translation rules, interfaces, and data movement so failures are easier to prevent and fix.</li>
-          <li class="use-case">Developers can see how code, integrations, workflows, and data flows connect before changes create downstream problems.</li>
-          <li class="use-case">Database and data teams can catch data issues earlier, monitor downstream impact, and automate cleanup across tables, reports, and source systems.</li>
+          <li class="use-case">Website MVP: chat, inspect GitHub files, propose a website change, approve it, create a branch or PR, review the diff or result, deploy, and preserve audit history.</li>
+          <li class="use-case">SQL modernization: inspect metadata, tables, procedures, jobs, stats, and dependencies. Propose safer changes, require approval for writes or schema changes, and record what happened.</li>
+          <li class="use-case">EDI modernization: map trading partners, document types, segments, fields, validation rules, transformations, outputs, and errors so fragile EDI processes are easier to understand, improve, or replace.</li>
         </ul>
       </div>
     </section>
@@ -369,7 +342,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Customer-driven product improvement</h2>
-          <p>Implementation work should not disappear into one-off projects. When a customer need is broadly useful, it can be proposed as a Foundation improvement. Customers can review, vote on, and help prioritize reusable improvements so the product gets stronger over time.</p>
+          <p>Implementation work should not disappear into one-off projects. When a customer need is broadly useful, it can become a product improvement for KnowledgeMap AI, ControlGate, or future GetYouSomeAI products.</p>
         </div>
 
         <div class="owns">
@@ -378,7 +351,7 @@
           <span class="tag">Business impact notes</span>
           <span class="tag">Under review</span>
           <span class="tag">Planned</span>
-          <span class="tag">Released into Foundation</span>
+          <span class="tag">Released into the product</span>
           <span class="tag">Customer-specific when needed</span>
         </div>
       </div>
@@ -387,7 +360,7 @@
     <section>
       <div class="container">
         <div class="principle">
-          <p>Core asks, plans, creates, acts, and reviews. Foundation maps, grounds, governs, and improves. Services tailor the platform to your business.</p>
+          <p>AI works better when it has a map. KnowledgeMap provides the understanding. ControlGate controls the action.</p>
         </div>
       </div>
     </section>
@@ -396,7 +369,7 @@
 
   <footer>
     <div class="container footer-row">
-      <div>© 2026 KnowledgeMap AI. GetYouSomeAI is the marketing doorway.</div>
+      <div>© 2026 GetYouSomeAI. KnowledgeMap AI is powered by ControlGate.</div>
       <div><a href="index.html">Home</a></div>
     </div>
   </footer>
