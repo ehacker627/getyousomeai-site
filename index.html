@@ -7,17 +7,19 @@
   <meta name="description" content="GetYouSomeAI builds practical AI products powered by ControlGate. KnowledgeMap AI is the first enterprise product." />
   <style>
     :root {
-      --bg: #07111f;
-      --panel: #0d1a2d;
+      --bg: #050b18;
+      --panel: #0b1728;
       --panel-2: #101f35;
       --text: #edf6ff;
       --muted: #a8b8cc;
       --line: rgba(255,255,255,.12);
-      --cyan: #29d3ff;
-      --blue: #4b7dff;
-      --magenta: #ff3fd1;
+      --blue: #245BFF;
+      --logo-blue: #1D4DFF;
+      --violet: #7A2CFF;
+      --magenta-violet: #9B3DFF;
       --green: #72ffb6;
-      --shadow: 0 24px 80px rgba(0,0,0,.35);
+      --brand-gradient: linear-gradient(135deg, var(--logo-blue), var(--violet));
+      --shadow: 0 24px 80px rgba(0,0,0,.38);
       --radius: 24px;
     }
 
@@ -27,9 +29,9 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 20% 10%, rgba(41,211,255,.18), transparent 28%),
-        radial-gradient(circle at 90% 18%, rgba(255,63,209,.15), transparent 30%),
-        linear-gradient(180deg, #06101d 0%, #081320 48%, #050b14 100%);
+        radial-gradient(circle at 18% 8%, rgba(36,91,255,.18), transparent 30%),
+        radial-gradient(circle at 88% 16%, rgba(122,44,255,.17), transparent 32%),
+        linear-gradient(180deg, var(--bg) 0%, #071326 48%, #050915 100%);
       line-height: 1.6;
     }
 
@@ -41,7 +43,7 @@
       top: 0;
       z-index: 10;
       backdrop-filter: blur(18px);
-      background: rgba(7,17,31,.74);
+      background: rgba(5,11,24,.78);
       border-bottom: 1px solid var(--line);
     }
 
@@ -56,28 +58,18 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 11px;
       font-weight: 850;
-      letter-spacing: -.03em;
+      letter-spacing: 0;
     }
 
-    .mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 13px;
-      background: linear-gradient(135deg, var(--cyan), var(--blue) 52%, var(--magenta));
-      box-shadow: 0 0 32px rgba(41,211,255,.28);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .mark:after {
-      content: "";
-      position: absolute;
-      inset: 9px;
-      border: 2px solid rgba(255,255,255,.9);
-      border-radius: 50%;
-      box-shadow: 13px -4px 0 -7px rgba(255,255,255,.9), -10px 9px 0 -6px rgba(255,255,255,.9);
+    .brand-mark { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--brand-gradient); color: #fff; font-size: 27px; line-height: 1; font-weight: 950; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; box-shadow: 0 0 34px rgba(36,91,255,.28); }
+    .brand-word { display: inline-flex; align-items: baseline; color: var(--text); font-size: 16px; line-height: 1; }
+    .brand-ai, .gradient-text {
+      background: var(--brand-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .links { display: flex; align-items: center; gap: 22px; color: var(--muted); font-size: 14px; }
@@ -98,11 +90,14 @@
     }
 
     .button.primary {
-      background: linear-gradient(135deg, var(--cyan), var(--blue));
-      color: #03101c;
+      background: var(--brand-gradient);
+      color: #fff;
       border: 0;
-      box-shadow: 0 18px 60px rgba(41,211,255,.25);
+      box-shadow: 0 18px 60px rgba(36,91,255,.28);
     }
+
+    .button:hover { border-color: rgba(122,44,255,.36); background: rgba(255,255,255,.085); }
+    .button.primary:hover { background: linear-gradient(135deg, #2f66ff, var(--magenta-violet)); }
 
     .hero { padding: 56px 0 36px; position: relative; overflow: hidden; }
     .eyebrow {
@@ -128,13 +123,6 @@
       letter-spacing: -.075em;
     }
 
-    .gradient-text {
-      background: linear-gradient(135deg, var(--text) 0%, var(--cyan) 48%, var(--magenta) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
     .hero-copy {
       max-width: 860px;
       margin: 48px 0 0;
@@ -150,7 +138,7 @@
       letter-spacing: -.02em;
       padding-bottom: 6px;
       margin-bottom: 16px;
-      border-bottom: 2px solid rgba(41,211,255,.55);
+      border-bottom: 2px solid rgba(36,91,255,.65);
     }
     .hero-copy-points {
       display: grid;
@@ -168,14 +156,14 @@
       width: 21px;
       height: 21px;
       flex: 0 0 auto;
-      color: var(--cyan);
+      color: var(--logo-blue);
     }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
     .role-head p + p { margin-top: 12px; }
 
     .card, .section-card {
       border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.03));
       box-shadow: var(--shadow);
       border-radius: var(--radius);
     }
@@ -197,7 +185,7 @@
       padding: 38px;
       border-radius: 30px;
       background:
-        linear-gradient(135deg, rgba(41,211,255,.18), rgba(255,63,209,.12)),
+        linear-gradient(135deg, rgba(36,91,255,.18), rgba(122,44,255,.12)),
         rgba(255,255,255,.05);
       border: 1px solid rgba(255,255,255,.15);
     }
@@ -208,6 +196,7 @@
 
     footer { padding: 34px 0 54px; color: var(--muted); border-top: 1px solid var(--line); }
     .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 
     @media (max-width: 820px) {
       body { overflow-x: hidden; }
@@ -243,7 +232,7 @@
         padding: 10px;
         border: 1px solid var(--line);
         border-radius: 18px;
-        background: rgba(7,17,31,.92);
+        background: rgba(5,11,24,.94);
         box-shadow: var(--shadow);
       }
       .mobile-menu.is-open { display: flex; flex-direction: column; gap: 6px; }
@@ -258,8 +247,10 @@
       }
       .mobile-menu a:hover { color: var(--text); background: rgba(255,255,255,.06); }
       .mobile-menu .button { color: var(--text); margin-top: 4px; }
+      .mobile-menu .button:hover { color: var(--text); }
       h1 { font-size: 32px; line-height: 1.04; letter-spacing: -.035em; overflow-wrap: break-word; }
       h2 { font-size: 26px; line-height: 1.08; letter-spacing: -.025em; overflow-wrap: break-word; }
+      .brand-word { font-size: 15px; }
       .hero { padding-top: 48px; }
       .grid-2, .grid-3 { grid-template-columns: 1fr; }
       .container { width: min(calc(100vw - 28px), 1120px); }
@@ -271,8 +262,8 @@
   <header>
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="GetYouSomeAI home">
-        <span class="mark" aria-hidden="true"></span>
-        <span>GetYouSomeAI</span>
+        <span class="brand-mark" aria-hidden="true">g</span>
+        <span class="brand-word" aria-hidden="true"><span>GetYouSome</span><span class="brand-ai">AI</span></span>
       </a>
       <nav class="links" aria-label="Main navigation">
         <a href="index.html">Home</a>
@@ -412,7 +403,10 @@
 
   <footer>
     <div class="container footer-row">
-      <div>© 2026 GetYouSomeAI. Practical AI products powered by ControlGate.</div>
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">g</span>
+        <span><span class="brand-word" aria-label="GetYouSomeAI"><span>GetYouSome</span><span class="brand-ai">AI</span></span>. Practical AI products powered by ControlGate.</span>
+      </div>
       <div><a href="platform.html">KnowledgeMap AI</a></div>
     </div>
   </footer>
