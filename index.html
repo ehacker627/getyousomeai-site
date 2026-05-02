@@ -3,436 +3,353 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GetYouSomeAI — Practical AI products powered by ControlGate</title>
-  <meta name="description" content="GetYouSomeAI builds practical AI products powered by ControlGate. KnowledgeMap AI is the first enterprise product." />
+  <title>GetYouSomeAI | Coming Soon</title>
+  <meta name="description" content="GetYouSomeAI is coming soon with practical AI products for real business problems, powered by ControlGate." />
   <style>
     :root {
-      --bg: #050b18;
-      --panel: #0b1728;
-      --panel-2: #101f35;
-      --text: #edf6ff;
-      --muted: #a8b8cc;
-      --line: rgba(255,255,255,.12);
-      --blue: #245BFF;
-      --logo-blue: #1D4DFF;
-      --violet: #7A2CFF;
-      --magenta-violet: #9B3DFF;
+      color-scheme: dark;
+      --bg: #05070d;
+      --panel: rgba(12, 18, 31, 0.72);
+      --panel-strong: rgba(17, 27, 45, 0.86);
+      --text: #f4f8ff;
+      --muted: #aab7c9;
+      --line: rgba(255, 255, 255, 0.14);
+      --blue: #2f66ff;
+      --violet: #8b45ff;
+      --cyan: #54e6ff;
       --green: #72ffb6;
-      --brand-gradient: linear-gradient(135deg, var(--logo-blue), var(--violet));
-      --shadow: 0 24px 80px rgba(0,0,0,.38);
-      --radius: 24px;
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.46);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
+
     body {
+      min-height: 100vh;
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 18% 8%, rgba(36,91,255,.18), transparent 30%),
-        radial-gradient(circle at 88% 16%, rgba(122,44,255,.17), transparent 32%),
-        linear-gradient(180deg, var(--bg) 0%, #071326 48%, #050915 100%);
-      line-height: 1.6;
+        radial-gradient(circle at 12% 14%, rgba(47, 102, 255, 0.32), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(139, 69, 255, 0.28), transparent 30%),
+        radial-gradient(circle at 68% 82%, rgba(84, 230, 255, 0.12), transparent 34%),
+        linear-gradient(145deg, #05070d 0%, #07111f 46%, #04050a 100%);
+      line-height: 1.5;
+      overflow-x: hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(18px);
-      background: rgba(5,11,24,.78);
-      border-bottom: 1px solid var(--line);
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      content: "";
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.78), transparent 78%);
     }
 
-    .nav {
+    body::after {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      content: "";
+      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.34));
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      width: min(1120px, calc(100% - 40px));
+      min-height: 100vh;
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 28px;
+      padding: 30px 0;
+    }
+
+    header,
+    footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      min-height: 76px;
+      gap: 18px;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 11px;
+      gap: 12px;
       font-weight: 850;
+      letter-spacing: 0;
+      text-decoration: none;
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--violet));
+      box-shadow: 0 0 36px rgba(47, 102, 255, 0.4);
+      font-size: 27px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .brand span:last-child {
+      font-size: 16px;
+    }
+
+    .old-link {
+      color: rgba(244, 248, 255, 0.46);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .old-link:focus,
+    .old-link:hover {
+      color: var(--text);
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      padding: 30px 0;
+    }
+
+    .hero {
+      position: relative;
+      width: min(880px, 100%);
+      padding: clamp(28px, 6vw, 64px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.035)),
+        var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(22px);
+    }
+
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background:
+        linear-gradient(135deg, rgba(84, 230, 255, 0.14), transparent 34%),
+        linear-gradient(315deg, rgba(139, 69, 255, 0.16), transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero > * {
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      color: #dce8f9;
+      background: rgba(255, 255, 255, 0.065);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 20px var(--green);
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 26px 0 0;
+      font-size: clamp(54px, 10vw, 118px);
+      line-height: 0.88;
       letter-spacing: 0;
     }
 
-    .brand-mark { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--brand-gradient); color: #fff; font-size: 27px; line-height: 1; font-weight: 950; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; box-shadow: 0 0 34px rgba(36,91,255,.28); }
-    .brand-word { display: inline-flex; align-items: baseline; color: var(--text); font-size: 16px; line-height: 1; }
-    .brand-ai, .gradient-text {
-      background: var(--brand-gradient);
+    .brand-line {
+      max-width: 720px;
+      margin: 26px 0 0;
+      font-size: clamp(24px, 4vw, 42px);
+      line-height: 1.04;
+      font-weight: 900;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #fff, #b8dcff 34%, #c49cff 76%, #78f7ff);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    .links { display: flex; align-items: center; gap: 22px; color: var(--muted); font-size: 14px; }
-    .links a:hover { color: var(--text); }
-    .mobile-menu-toggle, .mobile-menu { display: none; }
+    .support {
+      max-width: 660px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2.2vw, 21px);
+    }
+
+    .product-note {
+      max-width: 690px;
+      margin: 28px 0 0;
+      padding: 18px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 8px;
+      background: var(--panel-strong);
+      color: #dce8f9;
+      font-size: 16px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin: 34px 0 0;
+    }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      min-height: 46px;
-      padding: 0 18px;
-      border-radius: 999px;
-      font-weight: 800;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-    }
-
-    .button.primary {
-      background: var(--brand-gradient);
-      color: #fff;
+      min-height: 50px;
+      padding: 0 22px;
       border: 0;
-      box-shadow: 0 18px 60px rgba(36,91,255,.28);
-    }
-
-    .button:hover { border-color: rgba(122,44,255,.36); background: rgba(255,255,255,.085); }
-    .button.primary:hover { background: linear-gradient(135deg, #2f66ff, var(--magenta-violet)); }
-
-    .hero { padding: 56px 0 36px; position: relative; overflow: hidden; }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border: 1px solid var(--line);
       border-radius: 999px;
-      color: var(--muted);
-      background: rgba(255,255,255,.05);
-      font-size: 14px;
-      margin-bottom: 26px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--violet));
+      box-shadow: 0 18px 54px rgba(47, 102, 255, 0.34);
+      font-weight: 850;
+      text-decoration: none;
     }
 
-    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 22px var(--green); }
-
-    h1 {
-      max-width: 920px;
-      margin: 0;
-      font-size: clamp(52px, 8vw, 104px);
-      line-height: .9;
-      letter-spacing: -.075em;
+    .button:focus,
+    .button:hover {
+      filter: brightness(1.08);
     }
 
-    .hero-copy {
-      max-width: 860px;
-      margin: 48px 0 0;
-      padding: 22px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      color: #d8eaff;
-    }
-    .hero-copy-lead {
-      display: inline-block;
-      font-size: clamp(18px, 1.9vw, 22px);
-      font-weight: 800;
-      letter-spacing: -.02em;
-      padding-bottom: 6px;
-      margin-bottom: 16px;
-      border-bottom: 2px solid rgba(36,91,255,.65);
-    }
-    .hero-copy-points {
-      display: grid;
-      gap: 10px;
-    }
-    .hero-copy-point {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: clamp(19px, 2vw, 25px);
-      font-weight: 750;
-      line-height: 1.3;
-    }
-    .hero-copy-point svg {
-      width: 21px;
-      height: 21px;
-      flex: 0 0 auto;
-      color: var(--logo-blue);
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
-    .role-head p + p { margin-top: 12px; }
-
-    .card, .section-card {
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
+    .microcopy {
+      color: rgba(244, 248, 255, 0.55);
+      font-size: 13px;
+      font-weight: 700;
     }
 
-    section { padding: 56px 0; }
-    #why { padding-top: 32px; }
-    .section-head { max-width: 780px; margin-bottom: 24px; }
-    h2 { font-size: clamp(34px, 4vw, 58px); line-height: 1; letter-spacing: -.055em; margin: 0 0 18px; }
-    .section-head p, .large-copy { color: var(--muted); font-size: 20px; margin: 0; }
-
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { padding: 28px; }
-    .card h3 { margin: 0 0 10px; font-size: 24px; letter-spacing: -.03em; }
-    .card p { margin: 0; color: var(--muted); }
-
-    .callout {
-      margin-top: 28px;
-      padding: 38px;
-      border-radius: 30px;
-      background:
-        linear-gradient(135deg, rgba(36,91,255,.18), rgba(122,44,255,.12)),
-        rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.15);
+    footer {
+      color: rgba(244, 248, 255, 0.48);
+      font-size: 13px;
     }
 
-    .callout p { margin: 0; font-size: clamp(28px, 4vw, 48px); line-height: 1.04; letter-spacing: -.055em; font-weight: 900; }
-    .callout .large-copy { margin-top: 18px; font-size: 20px; line-height: 1.6; letter-spacing: 0; font-weight: 400; max-width: 860px; }
-    .callout .hero-actions { margin-top: 24px; }
-
-    footer { padding: 34px 0 54px; color: var(--muted); border-top: 1px solid var(--line); }
-    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    .footer-brand { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-
-    @media (max-width: 820px) {
-      body { overflow-x: hidden; }
-      .links { display: none; }
-      .mobile-menu-toggle {
-        display: inline-flex;
-        position: fixed;
-        top: 17px;
-        right: 14px;
-        z-index: 12;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        min-height: 42px;
-        padding: 0 14px;
-        border: 1px solid rgba(255,255,255,.14);
-        border-radius: 999px;
-        color: var(--text);
-        background: rgba(255,255,255,.06);
-        font: inherit;
-        font-size: 14px;
-        font-weight: 800;
-        cursor: pointer;
+    @media (max-width: 768px) {
+      .shell {
+        width: min(100% - 28px, 1120px);
+        gap: 18px;
+        padding: 18px 0;
       }
-      .mobile-menu {
-        position: fixed;
-        top: 76px;
-        left: 14px;
-        right: 14px;
-        z-index: 11;
-        width: auto;
-        margin: 0;
-        padding: 10px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: rgba(5,11,24,.94);
-        box-shadow: var(--shadow);
+
+      header,
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
       }
-      .mobile-menu.is-open { display: flex; flex-direction: column; gap: 6px; }
-      .mobile-menu a {
-        display: flex;
-        align-items: center;
-        min-height: 48px;
-        padding: 0 12px;
-        border-radius: 12px;
-        color: var(--muted);
-        font-weight: 750;
+
+      main {
+        padding: 14px 0 22px;
       }
-      .mobile-menu a:hover { color: var(--text); background: rgba(255,255,255,.06); }
-      .mobile-menu .button { color: var(--text); margin-top: 4px; }
-      .mobile-menu .button:hover { color: var(--text); }
-      h1 { font-size: 32px; line-height: 1.04; letter-spacing: -.035em; overflow-wrap: break-word; }
-      h2 { font-size: 26px; line-height: 1.08; letter-spacing: -.025em; overflow-wrap: break-word; }
-      .brand-word { font-size: 15px; }
-      .hero { padding-top: 48px; }
-      .grid-2, .grid-3 { grid-template-columns: 1fr; }
-      .container { width: min(calc(100vw - 28px), 1120px); }
-      header .container { width: min(calc(100vw - 28px), 1120px); }
+
+      .hero {
+        padding: 30px 22px;
+      }
+
+      h1 {
+        font-size: clamp(52px, 18vw, 84px);
+        line-height: 0.92;
+      }
+
+      .brand-line {
+        font-size: clamp(25px, 8vw, 38px);
+      }
+
+      .support {
+        font-size: 17px;
+      }
+
+      .actions,
+      .button {
+        width: 100%;
+      }
+
+      .microcopy {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .brand span:last-child {
+        font-size: 15px;
+      }
+
+      .mark {
+        width: 38px;
+        height: 38px;
+        font-size: 25px;
+      }
+
+      .hero {
+        padding: 26px 18px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="GetYouSomeAI home">
-        <span class="brand-mark" aria-hidden="true">g</span>
-        <span class="brand-word" aria-hidden="true"><span>GetYouSome</span><span class="brand-ai">AI</span></span>
+  <div class="shell">
+    <header aria-label="Site header">
+      <a class="brand" href="/" aria-label="GetYouSomeAI home">
+        <span class="mark" aria-hidden="true">+</span>
+        <span>GetYouSomeAI</span>
       </a>
-      <nav class="links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="platform.html">KnowledgeMap AI</a>
-        <a href="avoid-the-circus.html">Avoid the Circus</a>
-        <a class="button" href="mailto:hello@getyousomeai.com?subject=Pilot%20conversation%20for%20GetYouSomeAI">Pilot conversations</a>
-      </nav>
-      <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
-        <span>Menu</span>
-        <span aria-hidden="true">&#9776;</span>
-      </button>
-    </div>
-    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
-      <a href="index.html">Home</a>
-      <a href="platform.html">KnowledgeMap AI</a>
-      <a href="avoid-the-circus.html">Avoid the Circus</a>
-      <a class="button" href="mailto:hello@getyousomeai.com?subject=Pilot%20conversation%20for%20GetYouSomeAI">Pilot conversations</a>
-    </nav>
-  </header>
+      <a class="old-link" href="index-old.html">Previous homepage</a>
+    </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="eyebrow"><span class="pulse"></span> Practical AI products powered by ControlGate</div>
-        <h1>Stop talking about AI.<br><span class="gradient-text">Get you some AI.</span></h1>
-        <div class="hero-copy">
-          <div class="hero-copy-lead">Enterprise AI Without</div>
-          <div class="hero-copy-points">
-            <div class="hero-copy-point">
-              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="6" width="18" height="12" rx="2"></rect>
-                <circle cx="12" cy="12" r="2.5"></circle>
-                <path d="M6 9h.01"></path>
-                <path d="M18 15h.01"></path>
-              </svg>
-              <span>Seven-Digit Price Tag</span>
-            </div>
-            <div class="hero-copy-point">
-              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M8 2v4"></path>
-                <path d="M16 2v4"></path>
-                <rect x="3" y="4" width="18" height="18" rx="3"></rect>
-                <path d="M3 10h18"></path>
-              </svg>
-              <span>Six-Month Consulting Circus</span>
-            </div>
-          </div>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="eyebrow"><span class="pulse" aria-hidden="true"></span> GetYouSomeAI is loading</div>
+        <h1 id="page-title" class="gradient-text">Coming Soon</h1>
+        <p class="brand-line">Stop talking about AI. Get you some AI.</p>
+        <p class="support">Practical AI products for real business problems, powered by ControlGate.</p>
+        <p class="product-note">KnowledgeMap AI is the first enterprise product powered by ControlGate.</p>
+        <div class="actions">
+          <a class="button" href="mailto:hello@getyousomeai.com?subject=Pilot%20conversation%20for%20GetYouSomeAI">Pilot conversations</a>
+          <span class="microcopy">Early pilots are being shaped now.</span>
         </div>
-        <p class="hero-copy">We build AI products that help teams inspect real context, plan useful changes, approve action, and review results without turning every AI idea into a giant consulting program.</p>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section id="why">
-      <div class="container">
-        <div class="section-head role-head">
-          <h2>Built for the people who keep the business running</h2>
-          <p>Every company has people who know how the business really works — the report builder, the operations lead, the finance analyst, the purchasing coordinator, the quality manager, the customer service rep, and the person everyone asks when something breaks.</p>
-          <p>GetYouSomeAI builds practical AI products that turn scattered business knowledge into mapped context, guided workflows, approved action, and results your team can review.</p>
-        </div>
-        <div class="grid-3">
-          <div class="card">
-            <h3>Leadership</h3>
-            <p>Leadership gets earlier visibility into problems that usually stay hidden until they become expensive, urgent, or political.</p>
-          </div>
-          <div class="card">
-            <h3>Business teams</h3>
-            <p>Sales, marketing, finance, purchasing, operations, quality, and the rest of your teams can get answers faster without relying on tribal knowledge.</p>
-          </div>
-          <div class="card">
-            <h3>Technical teams</h3>
-            <p>Technical teams can move faster, automate more, and fix more of what they already know needs fixing — without losing time rediscovering how everything works.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="map">
-      <div class="container">
-        <div class="section-head">
-          <h2>From scattered knowledge to approved action.</h2>
-        </div>
-        <div class="grid-3">
-          <div class="card">
-            <h3>Gather the scattered context</h3>
-            <p>Connect the systems, files, workflows, reports, rules, and tribal knowledge your business already depends on.</p>
-          </div>
-          <div class="card">
-            <h3>Turn it into mapped understanding</h3>
-            <p>Organize that context into relationships, ownership, rules, dependencies, and reusable knowledge your team can trust.</p>
-          </div>
-          <div class="card">
-            <h3>Move from proposal to approved action</h3>
-            <p>Use ControlGate to inspect, plan, propose, approve, hand off implementation, review results, and keep an audit history.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="offer">
-      <div class="container">
-        <div class="section-head">
-          <h2>What we offer</h2>
-        </div>
-        <div class="grid-3">
-          <div class="card">
-            <h3>ControlGate</h3>
-            <p>The approval-gated AI workbench behind GetYouSomeAI products. ControlGate helps teams move from conversation to inspected context, proposed work, human approval, implementation handoff, review, and action history.</p>
-          </div>
-          <div class="card">
-            <h3>KnowledgeMap AI</h3>
-            <p>The first enterprise product powered by ControlGate. KnowledgeMap AI maps existing systems, workflows, files, databases, rules, and dependencies so teams can safely improve or replace what they already have.</p>
-          </div>
-          <div class="card">
-            <h3>Implementation Services</h3>
-            <p>Custom setup, integration, workflow, automation, migration, and specialized implementation work when needed. Reusable needs can become product improvements.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="pilot">
-      <div class="container grid-2">
-        <div class="section-head">
-          <h2>Pilot conversations opening soon.</h2>
-          <p>We’re looking for companies that want to start with one practical slice: map a real workflow, inspect the real context, propose useful changes, approve action through ControlGate, and review what happened.</p>
-        </div>
-        <div class="card">
-          <h3>Start with a focused slice.</h3>
-          <p>Pick one department, workflow, application, file set, or operational pain point. We map it, connect it, and show how KnowledgeMap AI and ControlGate can move your team from proposal to approved action.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="mailto:hello@getyousomeai.com?subject=Pilot%20conversation%20for%20GetYouSomeAI">Start a pilot conversation</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-row">
-      <div class="footer-brand">
-        <span class="brand-mark" aria-hidden="true">g</span>
-        <span><span class="brand-word" aria-label="GetYouSomeAI"><span>GetYouSome</span><span class="brand-ai">AI</span></span>. Practical AI products powered by ControlGate.</span>
-      </div>
-      <div><a href="platform.html">KnowledgeMap AI</a></div>
-    </div>
-  </footer>
-  <script>
-    document.querySelectorAll('.mobile-menu-toggle').forEach((button) => {
-      const menu = document.getElementById(button.getAttribute('aria-controls'));
-      if (!menu) return;
-
-      const closeMenu = () => {
-        menu.classList.remove('is-open');
-        button.setAttribute('aria-expanded', 'false');
-      };
-
-      button.addEventListener('click', () => {
-        const isOpen = menu.classList.toggle('is-open');
-        button.setAttribute('aria-expanded', String(isOpen));
-      });
-
-      menu.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', closeMenu);
-      });
-
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 820) closeMenu();
-      });
-    });
-  </script>
+    <footer>
+      <span>&copy; 2026 GetYouSomeAI</span>
+      <span>Powered by ControlGate</span>
+    </footer>
+  </div>
 </body>
 </html>
